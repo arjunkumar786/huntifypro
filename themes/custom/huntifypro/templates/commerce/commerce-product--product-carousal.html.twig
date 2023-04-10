@@ -1,0 +1,115 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'commerce-product',
+  'commerce-product--' ~ product_entity.bundle|clean_class,
+  'commerce-product--catalog'
+]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  {# <div class="commerce-product--catalog__image">
+    {{- product.field_images -}}
+    {{- product.variation_field_images -}}
+    <a href="{{ product_url }}" class="commerce-product--catalog__hover-text"><i class="glyph glyph-look"></i>{{ 'View product'|t }}</a>
+  </div>
+  <div class="commerce-product--catalog__info">
+    {{- product|without('variation_attributes', 'field_images', 'variation_field_images') -}}
+  </div> #}
+
+
+  <div class="card">
+    <div class="imgContainer">
+      {{- product.field_images -}}
+      {{- product.variation_field_images -}}
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-between mb-3">
+        <h5 class="mb-0">{{ product.title }}</h5>
+        {# <h5 class="text-dark mb-0">$1299</h5> #}
+      </div>
+      <div class="d-flex justify-content-between mb-2">
+        {{- product.body -}}
+      </div>
+      {# <div class="d-flex justify-content-between mb-2">
+        <div class="ms-auto text-warning">
+          <i class="fa fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div> #}
+      <div class="d-flex justify-content-between mb-2">
+        <div class="ms-auto text-warning">
+          <i class="fa fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        {{- product|without('variation_attributes', 'field_images', 'variation_field_images', 'title', 'body') -}}
+      </div>
+    </div>
+  </div>
+
+
+  {# <div class="box">
+		<div class="body">
+			<div class="imgContainer">
+				{{- product.field_images -}}
+        {{- product.variation_field_images -}}
+			</div>
+			<div class="content d-flex flex-column align-items-center justify-content-center">
+				<div class="product-info">
+          <h3 class="text-white fs-5">{{ product.title }}</h3>
+          {{- product|without('variation_attributes', 'field_images', 'variation_field_images', 'title') -}}
+
+					<!---- <p class="fs-6 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sed cum neque, rem provident ex. Laboriosam perspiciatis modi eveniet in?</p> --->
+				</div>
+			</div>
+		</div>
+	</div> #}
+</article>
+{# <article{{attributes}}>
+	{{ title_prefix }}
+	{{ title_suffix }}
+	<div class="box">
+		<div class="body">
+			{# <div class="imgContainer">
+				<img src="{{ product }}" alt="">
+			</div>
+			<div class="content d-flex flex-column align-items-center justify-content-center">
+				<div>
+          {{- product|without('variation_attributes', 'variation_field_images', 'title') -}}
+					<h3 class="text-white fs-5">{{product.title}}</h3>
+					<p class="fs-6 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sed cum neque, rem provident ex. Laboriosam perspiciatis modi eveniet in?</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</article> #}

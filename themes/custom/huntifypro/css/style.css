@@ -1,0 +1,313 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+ :root {
+  --main-white-color: white;
+  --main-black-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.static {
+  position: static;
+}
+
+.cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  -ms-interpolation-mode:bicubic
+}
+
+
+/*****************
+  Owl style start
+*****************/
+
+.owl-slide {
+  position: relative;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+.owl-carousel .owl-slide {
+  position: relative;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+.owl-carousel .owl-slide-animated {
+  transform: translateX(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.05s;
+}
+
+.owl-carousel .owl-slide-animated.is-transitioned {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s;
+}
+
+.owl-carousel .owl-slide-title.is-transitioned {
+  transition-delay: 0.2s;
+}
+
+.owl-carousel .owl-slide-subtitle.is-transitioned {
+  transition-delay: 0.35s;
+}
+
+.owl-carousel .owl-slide-cta.is-transitioned {
+  transition-delay: 0.5s;
+}
+
+.owl-carousel .owl-dots,
+.owl-carousel .owl-nav {
+  position: absolute;
+}
+
+.view-id-product_catalog .owl-carousel .owl-dots {
+  position: inherit;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.owl-carousel .owl-dots .owl-dot,
+.owl-carousel .owl-nav [class*="owl-"]:focus {
+  outline: none;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+  background: transparent;
+  /* border: 1px solid var(--main-black-color); */
+  transition: all 0.2s ease;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover span,
+.owl-carousel .owl-dots .owl-dot.active span {
+  background: #06A3DA!important;
+  width: 30px!important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 15px!important;
+  height: 15px!important;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 2px!important;
+  /* border: 0; */
+}
+
+
+.owl-carousel .owl-nav {
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.owl-carousel .owl-nav svg {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.owl-carousel .owl-nav button:hover svg {
+  opacity: 1;
+}
+
+.owl-carousel .owl-nav [class*="owl-"]:hover {
+  background: transparent;
+}
+
+@media screen and (max-width: 575px) {
+  .owl-carousel .owl-nav {
+    top: 5%;
+  }
+
+  .owl-carousel .owl-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/*******************
+  Owl style end
+*******************/
+
+/********************
+  How its works start
+*********************/
+.service-item {
+  position: relative;
+  height: 300px;
+  padding: 0 30px;
+  transition: .5s;
+}
+
+.service-icon {
+  margin-bottom: 30px;
+  width: 59px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06A3DA;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+}
+
+/****************************
+  Product listing view start
+****************************/
+
+ /* .box{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+ .box .body{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.9s ease;
+}
+
+ .box .body .imgContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+ .box .body .imgContainer img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ .box .body .content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+ .box:hover .body{
+  transform: rotateY(180deg);
+}
+
+ .box .body .content div.product-info{
+  transform-style: preserve-3d;
+  padding: 20px;
+  background: linear-gradient(45deg, #FE0061,#FFEB3B);
+  transform: translateZ(100px);
+}
+
+ .box .body .content div h3{
+  letter-spacing: 1px;
+} */
+
+/***************************
+  Product listing view end
+****************************/
+
+/***************************
+  Block common style start
+****************************/
+
+.section-title.block .view-header {
+  text-align: right;
+	margin: 10px 0;
+}
+
+.section-title.block .view-header a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #00a0d8;
+  font-weight: 700;
+}
+
+.section-title.block h2 {
+  text-align: center !important;
+  padding-bottom: 1rem !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  position: relative !important;
+  text-transform: capitalize;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.section-title.block h2::before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 5px;
+  /* left: 0; */
+  bottom: 0;
+  background: rgb(6 163 218);
+  border-radius: 2px;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.section-title.block h2::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 5px;
+  bottom: 0px;
+  background: #FFFFFF;
+  -webkit-animation: section-title-run 5s infinite linear;
+  animation: section-title-run 5s infinite linear;
+}
+
+.section-title.block .card .card-body a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+@keyframes section-title-run {
+  0% { left: 50%; margin-left: -75px; } 50% { left : 50%; margin-left: 45px; } 100% { left: 50%; margin-left: -75px; }
+}
+
+/***************************
+  Block common style end
+****************************/
+
+
