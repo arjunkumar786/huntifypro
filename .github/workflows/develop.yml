@@ -20,4 +20,4 @@ jobs:
         server: ftp.hemasharma.me
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: /huntifypro/
+        server-dir: /home1/mycuss6w/huntifypro/
