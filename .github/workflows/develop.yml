@@ -17,8 +17,8 @@ jobs:
     - name: 🚚 Install or update dependencies
       run: composer update --ignore-platform-reqs
 
-    - name: 🚚 Clear cache
-      run: ./vendor/bin/drush cr
+    # - name: 🚚 Clear cache
+    #   run: ./vendor/bin/drush cr
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
